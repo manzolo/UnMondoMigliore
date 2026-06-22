@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manifesto di Un Mondo Migliore · Un Mondo Migliore</title>
+<style>
+  :root {
+    --ink: #2c2620; --muted: #6b5f4f; --cream: #f7f0e1; --paper: #fffdf8;
+    --gold: #d39134; --gold-soft: #e8b25e; --terracotta: #b5612f;
+    --sky: #3c5d86; --line: #e6dac1; --done: #8a9a6b;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 19px; line-height: 1.72; -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- NAV --- */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem;
+    justify-content: space-between;
+    padding: .8rem clamp(1rem, 4vw, 2.4rem);
+    background: rgba(44,38,32,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(211,145,52,.4);
+  }
+  .nav .brand {
+    color: #fff; text-decoration: none; font-weight: 600; font-size: 1.05rem;
+    letter-spacing: .01em;
+  }
+  .nav__links { display: flex; gap: .3rem; flex-wrap: wrap; }
+  .nav__links a {
+    color: #e9dcc4; text-decoration: none; font-family: system-ui, sans-serif;
+    font-size: .92rem; padding: .35rem .85rem; border-radius: 999px;
+    transition: background .15s, color .15s;
+  }
+  .nav__links a:hover { background: rgba(232,178,94,.18); color: #fff; }
+  .nav__links a.active { background: var(--gold); color: #2c2620; font-weight: 600; }
+
+  /* --- HERO --- */
+  .hero {
+    position: relative; display: flex; flex-direction: column;
+    justify-content: flex-end; color: #fff;
+    padding: clamp(1.5rem, 5vw, 5rem);
+    /* spazio extra in basso: il testo non deve finire sotto la "scheda" */
+    padding-bottom: clamp(7rem, 11vw, 9.5rem);
+    background:
+      linear-gradient(180deg, rgba(20,28,46,.10) 0%, rgba(20,18,28,.12) 45%, rgba(28,20,16,.82) 100%),
+      url("assets/hero.png") center/cover no-repeat;
+  }
+  .hero--full { min-height: 74vh; }
+  .hero--slim { min-height: 34vh; }
+  .hero__kicker {
+    text-transform: uppercase; letter-spacing: .32em; font-size: .72rem;
+    font-family: system-ui, sans-serif; font-weight: 600; margin-bottom: 1rem;
+    opacity: .92; text-shadow: 0 1px 12px rgba(0,0,0,.5);
+  }
+  .hero__title {
+    margin: 0; font-weight: 600; letter-spacing: -.01em; line-height: 1.02;
+    font-size: clamp(2.3rem, 7vw, 5rem); max-width: 18ch;
+    text-shadow: 0 2px 28px rgba(0,0,0,.45);
+  }
+  .hero__sub {
+    margin: 1.3rem 0 0; font-style: italic; line-height: 1.5; max-width: 44ch;
+    font-size: clamp(1rem, 2.2vw, 1.4rem); text-shadow: 0 1px 16px rgba(0,0,0,.55);
+  }
+  .hero__sub em { font-style: normal; }
+
+  /* --- CONTENUTO --- */
+  main { max-width: 46rem; margin: 0 auto; padding: 0 clamp(1.4rem, 5vw, 2rem) 1rem; }
+  .sheet {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: clamp(1.8rem, 5vw, 3.4rem); margin-top: -4.5rem; position: relative;
+    box-shadow: 0 30px 60px -28px rgba(60,40,20,.35);
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 600;
+    margin: 2.6rem 0 .8rem; color: var(--terracotta); letter-spacing: -.01em;
+  }
+  h2:first-child { margin-top: 0; }
+  h2::before {
+    content: ""; display: block; width: 2.4rem; height: 3px; border-radius: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-soft)); margin-bottom: 1rem;
+  }
+  h3 { font-size: 1.2rem; color: var(--sky); margin: 1.8rem 0 .6rem; }
+  p { margin: 0 0 1.1rem; }
+  strong { color: var(--sky); font-weight: 700; }
+  a { color: var(--terracotta); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .85em;
+    background: rgba(181,97,47,.10); padding: .12em .4em; border-radius: 5px; color: var(--terracotta);
+  }
+  ul, ol { padding-left: 1.4rem; margin: 0 0 1.2rem; }
+  ul { list-style: none; padding-left: 0; }
+  ul li { position: relative; padding-left: 1.7rem; margin: .55rem 0; }
+  ul li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); font-size: .85em; top: .15em; }
+  ol li { margin: .5rem 0; padding-left: .3rem; }
+
+  /* checklist (roadmap) */
+  ul.tasklist li { padding-left: 2rem; }
+  ul.tasklist li::before { content: none; }
+  ul.tasklist .box { position: absolute; left: 0; top: 0; color: var(--gold); font-size: 1.15em; }
+  ul.tasklist .done { color: var(--done); }
+  ul.tasklist .done .box { color: var(--done); }
+  ul.tasklist .done strong { color: var(--done); }
+
+  blockquote {
+    margin: 1.6rem 0; padding: .2rem 0 .2rem 1.4rem; border-left: 3px solid var(--gold-soft);
+    font-style: italic; color: var(--muted); font-size: 1.06em;
+  }
+  hr { border: 0; height: 1px; background: var(--line); margin: 2.6rem 0; }
+
+  footer {
+    max-width: 46rem; margin: 0 auto; padding: 2.5rem clamp(1.4rem, 5vw, 2rem) 4rem;
+    text-align: center; color: var(--muted); font-size: .9rem; font-family: system-ui, sans-serif;
+  }
+  footer .names { color: var(--terracotta); font-weight: 600; }
+  footer a { color: var(--muted); }
+
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#ece3d2; --muted:#b3a589; --cream:#1c1812; --paper:#26201a; --line:#3a3026; }
+  }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">🌍 Un Mondo Migliore</a>
+    <div class="nav__links"><a href="index.html" class="active">Manifesto</a><a href="roadmap.html">Roadmap</a><a href="diario.html">Diario</a></div>
+  </nav>
+
+  <header class="hero hero--full">
+    <div class="hero__kicker">Un sogno matto · si comincia da qui</div>
+    <h1 class="hero__title">Manifesto di Un Mondo Migliore</h1>
+    <p class="hero__sub"><em>«C'è bisogno soprattutto d'uno slancio generoso, fosse anche un sogno matto.»</em><br>— Francesco Guccini, <em>Don Chisciotte</em></p>
+  </header>
+
+  <main>
+    <article class="sheet">
+<h2>Perché esistiamo</h2>
+<p>Perché abbiamo deciso, scherzando seriamente, che valeva la pena.</p>
+<p>Un Mondo Migliore nasce da una conversazione tra due persone e dall'idea forse pazzerella che un mondo migliore non si aspetta: si comincia. Adesso, nella vita reale, con quello che abbiamo.</p>
+<p>Il sogno è germogliato in una <strong>realtà parrocchiale</strong>, ma non resta dentro quel confine. Quel terreno gli ha dato le radici; il mondo intero gli darà i rami. Qui c'è posto per ogni credo e per chi non ne ha alcuno: nessuno è ospite, tutti sono di casa.</p>
+<p>Non è un partito, non è una religione, non è un'azienda. È un <em>social network vissuto</em> — non un sito, ma una rete di persone reali che si scambiano il meglio di sé. Lo costruiamo vivendo, non aspettando. Funziona già oggi, in piccolo, ogni volta che qualcuno dà qualcosa di buono a qualcun altro. Il nostro compito è solo renderlo visibile, collegarlo, farlo crescere — finché il sogno non diventa normalità.</p>
+<h2>Le idee da cui partiamo</h2>
+<p><strong>Ognuno dà il meglio di sé perché fa ciò che gli piace.</strong> La fatica imposta produce poco e male. La passione produce tanto e bene. In un mondo migliore non si chiede a nessuno di sacrificarsi: si chiede di portare ciò che già ama fare, e di portarlo agli altri.</p>
+<p><strong>Ogni diversità è una ricchezza reale.</strong> Ogni credo, ogni cultura, ogni storia, ogni modo di pensare è qualcosa in più, non un problema da tollerare. Le differenze non si smussano: si mettono in comune. Più colori ci sono, più bello è il quadro. Nessuna idea prevale su quella di un altro per autorità, anzianità o appartenenza: vale per ciò che porta a tutti.</p>
+<p><strong>Nessun obbligo, ma è bene dare anche poco.</strong> Non c'è una quota, non c'è un dovere. Ma una rete vive di ciò che le persone vi mettono dentro. Anche un piccolo contributo — una mezz'ora, un consiglio, una mano — è prezioso. Soprattutto se è quello che sai fare meglio.</p>
+<p><strong>Si comincia da dove si è.</strong> Da qualche parte bisogna pure iniziare. Noi iniziamo da qui: due nomi, un motto, un file di testo. Non aspettiamo il permesso, i fondi, la massa critica. Cominciamo piccoli e veri.</p>
+<p><strong>Il dono prima dello scambio.</strong> La moneta di questo mondo non è il denaro: è la generosità. Si dà senza tenere il conto. La fiducia che ne nasce vale più di qualsiasi contratto.</p>
+<p><strong>Reale prima che virtuale.</strong> La tecnologia può aiutare, ma il cuore è l'incontro tra persone vere. Prima le persone, poi gli strumenti.</p>
+<p><strong>Un sogno matto, tenuto con leggerezza.</strong> Lo prendiamo sul serio proprio perché sappiamo riderci su. L'utopia non si difende con il cipiglio: si costruisce con allegria, ostinazione e un po' di follia gentile.</p>
+<h2>Come si decide</h2>
+<p>Quasi sempre non serve decidere nulla: ognuno fa ciò che ama e nessuno comanda. Ma quando una scelta riguarda tutti e va presa insieme, vale una sola regola:</p>
+<p><strong>Ogni persona pesa uguale.</strong> Una testa, una voce. Non conta da quanto tempo ci sei, cosa credi, cosa sai fare o quanto hai dato. Si cerca prima il consenso — una soluzione in cui ciascuno si ritrovi. Se proprio non si trova, decide la <strong>maggioranza</strong>, dove il voto di chiunque vale esattamente come quello di chiunque altro. E chi resta in minoranza resta di casa: nessuno viene escluso per aver pensato diverso.</p>
+<h2>Cosa chiediamo a chi si unisce</h2>
+<ul><li>Porta <strong>una cosa</strong> che ti piace fare e falla per qualcun altro.</li><li>Non giudicare la misura del contributo di nessuno: vale anche poco.</li><li>Tratta le persone come le vorresti trovare in un mondo migliore.</li><li>Quando puoi, collega due persone che si possono aiutare.</li><li>Tieni il sogno acceso, anche quando sembra matto. Soprattutto allora.</li></ul>
+<h2>Cosa non siamo</h2>
+<ul><li>Non chiediamo soldi, iscrizioni, fedeltà.</li><li>Non promettiamo di salvare il mondo. Promettiamo di provarci, oggi.</li><li>Non abbiamo capi. Abbiamo persone che si prendono cura di pezzi del sogno.</li></ul>
+<h2>La promessa</h2>
+<p>Vivremo come se il mondo migliore fosse già qui — finché non lo sarà davvero.</p>
+<p><em>Comincia chi c'è. Continua chi arriva.</em></p>
+<hr>
+<p>Firmato, all'inizio: <strong>Andrea Manzi</strong> · <strong>Mariano Mirannalti</strong></p>
+<p>— <em>e chiunque, leggendo, abbia pensato anche solo per un attimo: «ci sto».</em></p>
+    </article>
+  </main>
+
+  <footer>
+    <span class="names">Comincia chi c'è. Continua chi arriva.</span><br>
+    e chiunque, leggendo, pensi anche solo per un attimo: «ci sto».
+  </footer>
+</body>
+</html>

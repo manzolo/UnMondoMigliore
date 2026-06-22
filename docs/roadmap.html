@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roadmap (non rigida) di Un Mondo Migliore · Un Mondo Migliore</title>
+<style>
+  :root {
+    --ink: #2c2620; --muted: #6b5f4f; --cream: #f7f0e1; --paper: #fffdf8;
+    --gold: #d39134; --gold-soft: #e8b25e; --terracotta: #b5612f;
+    --sky: #3c5d86; --line: #e6dac1; --done: #8a9a6b;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 19px; line-height: 1.72; -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- NAV --- */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.5rem;
+    justify-content: space-between;
+    padding: .8rem clamp(1rem, 4vw, 2.4rem);
+    background: rgba(44,38,32,.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(211,145,52,.4);
+  }
+  .nav .brand {
+    color: #fff; text-decoration: none; font-weight: 600; font-size: 1.05rem;
+    letter-spacing: .01em;
+  }
+  .nav__links { display: flex; gap: .3rem; flex-wrap: wrap; }
+  .nav__links a {
+    color: #e9dcc4; text-decoration: none; font-family: system-ui, sans-serif;
+    font-size: .92rem; padding: .35rem .85rem; border-radius: 999px;
+    transition: background .15s, color .15s;
+  }
+  .nav__links a:hover { background: rgba(232,178,94,.18); color: #fff; }
+  .nav__links a.active { background: var(--gold); color: #2c2620; font-weight: 600; }
+
+  /* --- HERO --- */
+  .hero {
+    position: relative; display: flex; flex-direction: column;
+    justify-content: flex-end; color: #fff;
+    padding: clamp(1.5rem, 5vw, 5rem);
+    /* spazio extra in basso: il testo non deve finire sotto la "scheda" */
+    padding-bottom: clamp(7rem, 11vw, 9.5rem);
+    background:
+      linear-gradient(180deg, rgba(20,28,46,.10) 0%, rgba(20,18,28,.12) 45%, rgba(28,20,16,.82) 100%),
+      url("assets/hero.png") center/cover no-repeat;
+  }
+  .hero--full { min-height: 74vh; }
+  .hero--slim { min-height: 34vh; }
+  .hero__kicker {
+    text-transform: uppercase; letter-spacing: .32em; font-size: .72rem;
+    font-family: system-ui, sans-serif; font-weight: 600; margin-bottom: 1rem;
+    opacity: .92; text-shadow: 0 1px 12px rgba(0,0,0,.5);
+  }
+  .hero__title {
+    margin: 0; font-weight: 600; letter-spacing: -.01em; line-height: 1.02;
+    font-size: clamp(2.3rem, 7vw, 5rem); max-width: 18ch;
+    text-shadow: 0 2px 28px rgba(0,0,0,.45);
+  }
+  .hero__sub {
+    margin: 1.3rem 0 0; font-style: italic; line-height: 1.5; max-width: 44ch;
+    font-size: clamp(1rem, 2.2vw, 1.4rem); text-shadow: 0 1px 16px rgba(0,0,0,.55);
+  }
+  .hero__sub em { font-style: normal; }
+
+  /* --- CONTENUTO --- */
+  main { max-width: 46rem; margin: 0 auto; padding: 0 clamp(1.4rem, 5vw, 2rem) 1rem; }
+  .sheet {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: clamp(1.8rem, 5vw, 3.4rem); margin-top: -4.5rem; position: relative;
+    box-shadow: 0 30px 60px -28px rgba(60,40,20,.35);
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 600;
+    margin: 2.6rem 0 .8rem; color: var(--terracotta); letter-spacing: -.01em;
+  }
+  h2:first-child { margin-top: 0; }
+  h2::before {
+    content: ""; display: block; width: 2.4rem; height: 3px; border-radius: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-soft)); margin-bottom: 1rem;
+  }
+  h3 { font-size: 1.2rem; color: var(--sky); margin: 1.8rem 0 .6rem; }
+  p { margin: 0 0 1.1rem; }
+  strong { color: var(--sky); font-weight: 700; }
+  a { color: var(--terracotta); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .85em;
+    background: rgba(181,97,47,.10); padding: .12em .4em; border-radius: 5px; color: var(--terracotta);
+  }
+  ul, ol { padding-left: 1.4rem; margin: 0 0 1.2rem; }
+  ul { list-style: none; padding-left: 0; }
+  ul li { position: relative; padding-left: 1.7rem; margin: .55rem 0; }
+  ul li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); font-size: .85em; top: .15em; }
+  ol li { margin: .5rem 0; padding-left: .3rem; }
+
+  /* checklist (roadmap) */
+  ul.tasklist li { padding-left: 2rem; }
+  ul.tasklist li::before { content: none; }
+  ul.tasklist .box { position: absolute; left: 0; top: 0; color: var(--gold); font-size: 1.15em; }
+  ul.tasklist .done { color: var(--done); }
+  ul.tasklist .done .box { color: var(--done); }
+  ul.tasklist .done strong { color: var(--done); }
+
+  blockquote {
+    margin: 1.6rem 0; padding: .2rem 0 .2rem 1.4rem; border-left: 3px solid var(--gold-soft);
+    font-style: italic; color: var(--muted); font-size: 1.06em;
+  }
+  hr { border: 0; height: 1px; background: var(--line); margin: 2.6rem 0; }
+
+  footer {
+    max-width: 46rem; margin: 0 auto; padding: 2.5rem clamp(1.4rem, 5vw, 2rem) 4rem;
+    text-align: center; color: var(--muted); font-size: .9rem; font-family: system-ui, sans-serif;
+  }
+  footer .names { color: var(--terracotta); font-weight: 600; }
+  footer a { color: var(--muted); }
+
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#ece3d2; --muted:#b3a589; --cream:#1c1812; --paper:#26201a; --line:#3a3026; }
+  }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html">🌍 Un Mondo Migliore</a>
+    <div class="nav__links"><a href="index.html">Manifesto</a><a href="roadmap.html" class="active">Roadmap</a><a href="diario.html">Diario</a></div>
+  </nav>
+
+  <header class="hero hero--slim">
+    <div class="hero__kicker">La mappa dei semi · non rigida</div>
+    <h1 class="hero__title">Roadmap (non rigida) di Un Mondo Migliore</h1>
+    
+  </header>
+
+  <main>
+    <article class="sheet">
+<blockquote>Questa non è una tabella di marcia con scadenze. È una mappa di <strong>semi</strong>.<br>Alcuni germoglieranno, altri no. Si pianta quando c'è voglia, si raccoglie<br>quando matura. Nessuna fase obbliga la successiva: si può saltare, tornare<br>indietro, inventare un sentiero nuovo.</blockquote>
+<h2>Stagione 0 — Il seme <em>(siamo qui)</em></h2>
+<p>L'idea esiste, ha un nome, ha un motto, ha due persone.</p>
+<ul class="tasklist"><li class="task done"><span class="box">☑</span>Dare un nome al sogno: <strong>Un Mondo Migliore</strong></li><li class="task done"><span class="box">☑</span>Scrivere il manifesto</li><li class="task done"><span class="box">☑</span>Scrivere questa mappa</li><li class="task"><span class="box">☐</span>Decidere insieme, noi due che abbiamo iniziato, le 3 cose che ci stanno più a cuore</li><li class="task"><span class="box">☐</span>Ognuno dei due nomina <strong>una cosa</strong> che sa fare bene e gli piace, da offrire</li><li class="task"><span class="box">☐</span>Fare il primo "atto" reale: un piccolo dono concreto a una terza persona</li></ul>
+<h2>Stagione 1 — I primi germogli</h2>
+<p>Far diventare l'idea qualcosa che si può raccontare in trenta secondi e che qualcun altro può toccare.</p>
+<ul class="tasklist"><li class="task"><span class="box">☐</span>Tenere un <strong>diario</strong> dei gesti: ogni piccolo contributo dato o ricevuto</li></ul>
+<p>(vedi <code>diario/</code>)</p>
+<ul class="tasklist"><li class="task"><span class="box">☐</span>Raccontare il progetto a 3 persone di cui ci fidiamo — e ascoltare cosa ne pensano</li><li class="task"><span class="box">☐</span>Trovare la prima persona oltre noi due che dice «ci sto»</li><li class="task"><span class="box">☐</span>Scrivere la storia di come è nato (il "perché" tiene insieme più di ogni regola)</li><li class="task"><span class="box">☐</span>Definire come si "entra": probabilmente solo... presentandosi e portando qualcosa</li></ul>
+<h2>Stagione 2 — La piccola rete</h2>
+<p>Da un gruppetto di amici a una vera rete di scambio del meglio di sé.</p>
+<ul class="tasklist"><li class="task"><span class="box">☐</span>Una <strong>mappa delle passioni</strong>: chi sa fare cosa, chi cerca cosa</li><li class="task"><span class="box">☐</span>Un modo semplice per collegare un bisogno a chi lo può soddisfare per dono</li><li class="task"><span class="box">☐</span>Ritrovarsi <em>davvero</em>, di persona, almeno una volta</li><li class="task"><span class="box">☐</span>Raccogliere le prime storie belle e renderle pubbliche, per ispirare altri</li><li class="task"><span class="box">☐</span>Capire quali strumenti servono (e quali no — meno è meglio)</li></ul>
+<h2>Stagione 3 — Il contagio gentile</h2>
+<p>Quando il piccolo funziona, lo si lascia crescere senza snaturarlo.</p>
+<ul class="tasklist"><li class="task"><span class="box">☐</span>Permettere ad altri di far nascere il loro "nodo" locale, con gli stessi principi</li><li class="task"><span class="box">☐</span>Scrivere cosa rende un nodo fedele al manifesto (e cosa lo tradirebbe)</li><li class="task"><span class="box">☐</span>Proteggere il sogno dalla deriva: niente capi, niente soldi al centro, niente obblighi</li><li class="task"><span class="box">☐</span>Festeggiare. Spesso. La gioia è parte del metodo.</li></ul>
+<h2>Stagione ∞ — Il sogno diventato normale</h2>
+<p>L'obiettivo finale è sparire come "progetto" e restare come modo di vivere. Avremo vinto il giorno in cui «un mondo migliore» non sarà più un'idea da spiegare, ma la cosa più ovvia del mondo.</p>
+<hr>
+<h2>Regole della mappa</h2>
+<ol><li><strong>Nessuna data obbligatoria.</strong> I semi crescono coi loro tempi.</li><li><strong>Si fa ciò che piace.</strong> Se un compito annoia tutti, forse non serviva.</li><li><strong>Anche poco conta.</strong> Spuntare una casella piccola è una vittoria vera.</li><li><strong>La mappa si riscrive.</strong> Quando impariamo qualcosa, aggiorniamo qui.</li><li><strong>Si comincia, sempre.</strong> Davanti al dubbio, fare un piccolo passo reale.</li></ol>
+    </article>
+  </main>
+
+  <footer>
+    <span class="names">Comincia chi c'è. Continua chi arriva.</span><br>
+    e chiunque, leggendo, pensi anche solo per un attimo: «ci sto».
+  </footer>
+</body>
+</html>
