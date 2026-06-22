@@ -59,12 +59,12 @@ Cominciamo piccoli e veri.
 Un mondo migliore non chiede a nessuno di lasciare ciò che già fa. Anzi: è bello
 che ognuno continui a creare e a far crescere le associazioni, i gruppi, le
 realtà in cui già si spende. Il valore che aggiungiamo è un altro — far parlare
-tra loro queste realtà, tesserle insieme. E i fili che le uniscono siamo noi:
-le persone che le vivono. Se canto nel coro, do una mano alla mensa e gioco
-nella squadra del quartiere, sono io il ponte tra quei tre mondi. Siamo noi
-"pazzi" che attraversiamo più realtà a diventare i legami che le tengono unite.
-Questa rete non la tessono le macchine: la tessono le persone che stanno in più
-posti e li fanno parlare.
+tra loro queste realtà, unirle. E i fili che le uniscono siamo noi: le persone
+che le vivono. Se canto nel coro, do una mano alla mensa e gioco nella squadra
+del quartiere, sono io il ponte tra quei tre mondi. Siamo noi "pazzi" che
+attraversiamo più realtà a diventare i legami che le tengono unite. Questa rete
+non la fanno le macchine: la fanno le persone che stanno in più posti e li
+mettono in comunicazione.
 
 **Il dono prima dello scambio.**
 La moneta di questo mondo non è il denaro: è la generosità. Si dà senza tenere
