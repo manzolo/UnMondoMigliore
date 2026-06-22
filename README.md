@@ -35,8 +35,14 @@ da qui.
 
 ## Vedere il sito
 
-Il manifesto si può generare come pagina HTML locale (serve solo `python3`,
-nessuna dipendenza):
+🌍 **Online:** https://manzolo.github.io/UnMondoMigliore/
+
+Il sito è pubblicato con GitHub Pages dalla cartella [`docs/`](docs/), che viene
+generata dal comando `make`. Per aggiornarlo online: `make` e poi un commit di
+`docs/`.
+
+Lo si può anche generare e vedere in locale (serve solo `python3`, nessuna
+dipendenza):
 
 ```sh
 make          # genera il sito in dist/

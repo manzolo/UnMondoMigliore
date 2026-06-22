@@ -30,7 +30,7 @@
 
 | # | Cosa | Chi | Stato | Note |
 |---|------|-----|-------|------|
-| 9 | Trasformare i documenti in una **paginetta web** semplice e bella | Claude | 🌿 | sito locale con manifesto + roadmap + diario e menù (`make`); resta la pubblicazione online |
+| 9 | Trasformare i documenti in una **paginetta web** semplice e bella | Claude | 🌳 | online su https://manzolo.github.io/UnMondoMigliore/ (GitHub Pages da `docs/`) |
 | 10 | Definire come si **entra** nel mondo migliore | — | 🌱 | probabilmente: presentarsi + portare qualcosa |
 | 11 | Raccogliere le **prime storie belle** e renderle pubbliche | — | 🌱 | per ispirare altri |
 

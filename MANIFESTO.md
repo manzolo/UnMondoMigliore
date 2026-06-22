@@ -60,18 +60,6 @@ Lo prendiamo sul serio proprio perché sappiamo riderci su. L'utopia non si
 difende con il cipiglio: si costruisce con allegria, ostinazione e un po' di
 follia gentile.
 
-## Come si decide
-
-Quasi sempre non serve decidere nulla: ognuno fa ciò che ama e nessuno comanda.
-Ma quando una scelta riguarda tutti e va presa insieme, vale una sola regola:
-
-**Ogni persona pesa uguale.** Una testa, una voce. Non conta da quanto tempo ci
-sei, cosa credi, cosa sai fare o quanto hai dato. Si cerca prima il consenso —
-una soluzione in cui ciascuno si ritrovi. Se proprio non si trova, decide la
-**maggioranza**, dove il voto di chiunque vale esattamente come quello di
-chiunque altro. E chi resta in minoranza resta di casa: nessuno viene escluso
-per aver pensato diverso.
-
 ## Cosa chiediamo a chi si unisce
 
 - Porta **una cosa** che ti piace fare e falla per qualcun altro.
