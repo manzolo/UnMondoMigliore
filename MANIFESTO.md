@@ -30,6 +30,14 @@ La fatica imposta produce poco e male. La passione produce tanto e bene. In un
 mondo migliore non si chiede a nessuno di sacrificarsi: si chiede di portare ciò
 che già ama fare, e di portarlo agli altri.
 
+**Il meglio per sé *e* per tutti.**
+In *A Beautiful Mind* il matematico John Nash corregge una vecchia idea: non
+basta che ognuno faccia ciò che è meglio per sé. Il risultato migliore arriva
+quando ognuno fa ciò che è meglio per sé *e* per il gruppo. È la nostra
+scommessa: fare ciò che ami è il meglio per te, portarlo agli altri è il meglio
+per tutti — e le due cose non sono in conflitto, sono la stessa mossa. Da soli
+si vince poco; insieme, facendo ciascuno la propria parte, si vince davvero.
+
 **Ogni diversità è una ricchezza reale.**
 Ogni credo, ogni cultura, ogni storia, ogni modo di pensare è qualcosa in più,
 non un problema da tollerare. Le differenze non si smussano: si mettono in
