@@ -37,6 +37,14 @@ comune. Più colori ci sono, più bello è il quadro. Nessuna idea prevale su
 quella di un altro per autorità, anzianità o appartenenza: vale per ciò che
 porta a tutti.
 
+**Cerchiamo ciò che unisce, non ciò che divide.**
+È umano, di fronte a chi è diverso, sentire un primo moto di sospetto: non ce
+ne vergogniamo, lo conosciamo tutti. Ma qui scegliamo di non fermarci lì. Ci
+prendiamo l'impegno di guardare oltre quella prima diffidenza e di cercare,
+ogni volta, ciò che abbiamo in comune — lasciando da parte ciò che ci separa.
+Non perché le differenze non contino, ma perché su ciò che ci unisce si può
+costruire insieme. Il sospetto è il punto di partenza; l'incontro è la meta.
+
 **Nessun obbligo, ma è bene dare anche poco.**
 Non c'è una quota, non c'è un dovere. Ma una rete vive di ciò che le persone vi
 mettono dentro. Anche un piccolo contributo — una mezz'ora, un consiglio, una
